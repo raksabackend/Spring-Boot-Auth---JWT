@@ -2,10 +2,7 @@ package com.example.demo.controller;
 
 import com.example.demo.Util.JwtUtil;
 import com.example.demo.entity.UserEntity;
-import com.example.demo.service.AuthService;
-import com.example.demo.service.OrderService;
-import com.example.demo.service.OrderServiceClient;
-import com.example.demo.service.OrderServiceWebClient;
+import com.example.demo.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 
@@ -17,6 +14,7 @@ import reactor.core.publisher.Mono;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
 
 @RequestMapping("/auth")
 @RestController
@@ -35,8 +33,10 @@ public class AuthController {
     private OrderService orderService;
 
     @Autowired
-    private OrderServiceWebClient orderServiceWebClient;
+    private OkHttpClientService okHttpClientService;
 
+    @Autowired
+    private OrderServiceWebClient orderServiceWebClient;
 
     @Autowired
     private AuthService authService;
@@ -93,6 +93,16 @@ public class AuthController {
         } catch (Exception e) {
             return "File Upload Failed";
         }
+    }
+
+    @GetMapping("/call")
+    public String callService() throws IOException {
+        return okHttpClientService.callToOtherService();
+    }
+
+    @PostMapping("/postMethodToOtherService")
+    public String postMethodToOtherService(@RequestParam("file") MultipartFile file) throws IOException {
+        return okHttpClientService.uploadFileToOtherService(file);
     }
 
 }

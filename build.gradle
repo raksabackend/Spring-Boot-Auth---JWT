@@ -48,6 +48,9 @@ dependencies {
 	compileOnly 'javax.servlet:javax.servlet-api:4.0.1'
 
 	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+
+	implementation 'org.springframework.cloud:spring-cloud-square-okhttp:0.4.1'
+	implementation 'org.springframework.cloud:spring-cloud-square-retrofit:0.4.1'
 }
 
 dependencyManagement {
