@@ -20,7 +20,7 @@ public class SecurityConfig  {
         http // Disable CSRF for simplicity (not recommended for production)
                 .csrf().disable()
                 .authorizeHttpRequests((authz) -> authz
-                        .requestMatchers("/auth/register","/auth/login", "/auth/testcalltoOrder/**","/auth/test-resilience","/swagger-ui/index.html","/v3/api-docs/**","/swagger-ui/**","/swagger-ui.html").permitAll()
+                        .requestMatchers("rabbit/send","/auth/register","/auth/login", "/auth/testcalltoOrder/**","/auth/test-resilience","/swagger-ui/index.html","/v3/api-docs/**","/swagger-ui/**","/swagger-ui.html").permitAll()
                         .anyRequest().authenticated()
                         // Require authentication for all other requests
                 );
