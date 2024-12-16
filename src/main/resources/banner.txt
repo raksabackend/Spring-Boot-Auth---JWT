@@ -1,0 +1,10 @@
+.oOOOo.                                     o.oOOOo.
+o     o               o                      o     o
+O.                                           O     O                O
+ `OOoo.                                      oOooOO.               oOo
+      `O .oOo. `OoOo. O  'OoOo. .oOoO        o     `O .oOo. .oOo.   o
+       o O   o  o     o   o   O o   O        O      o O   o O   o   O
+O.    .O o   O  O     O   O   o O   o        o     .O o   O o   O   o
+ `oooO'  oOoO'  o     o'  o   O `OoOo        `OooOO'  `OoO' `OoO'   `oO
+         O                          O
+         o'                      OoO'
